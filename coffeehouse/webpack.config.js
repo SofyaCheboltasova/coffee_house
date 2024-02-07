@@ -17,7 +17,7 @@ module.exports = {
         test: /\.(jpg|png|svg)$/,
         type: "asset/resource",
         generator: {
-          filename: "assets/images/[name][ext]",
+          filename: "assets/[name][ext]",
         },
       },
       { test: /\.(woff|woff2)$/, use: { loader: "url-loader" } },
