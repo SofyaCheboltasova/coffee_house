@@ -7,6 +7,10 @@ $color-border-dark: #665f55;
 $color-border-light: #c1b6ad;
 
 $header-height: 100px;
-$side-padding: 40px;
-$updown-padding: 20px;
+$up-right-padding: 20px 40px;
+$bottom-left-padding: 0 20px;
 $max-width: 1440px;
+
+$font-family: "Inter", sans-serif;
+
+$font-link-button: 600 1.6rem/1.5 $font-family;

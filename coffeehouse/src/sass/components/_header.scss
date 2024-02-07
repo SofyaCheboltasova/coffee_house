@@ -1,6 +1,40 @@
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
+  height: $header-height;
+  background-color: $color-background;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: $up-right-padding $bottom-left-padding;
+  margin: 0 auto;
+  max-width: $max-width;
+
+  font: $font-link-button;
+  color: $color-text-dark;
+}
+
+.header__navigation {
+  display: flex;
+  gap: 4rem;
+}
+
+.header__menu-button {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  align-items: center;
+
+  img {
+    padding-bottom: 3px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -2,6 +2,7 @@ function createHeader() {
   const header = document.createElement("header");
   header.classList.add("header");
   const headerWrapper = document.createElement("div");
+  headerWrapper.classList.add("header__wrapper");
 
   const logo = document.createElement("a");
   const logoImg = document.createElement("img");
@@ -10,6 +11,8 @@ function createHeader() {
 
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
+  ul.classList.add("header__navigation");
+
   const links = ["Favorite coffee", "About", "Mobile app", "Contact us"];
 
   for (let i = 0; i < links.length; i += 1) {
@@ -22,6 +25,7 @@ function createHeader() {
   nav.appendChild(ul);
 
   const a = document.createElement("a");
+  a.classList.add("header__menu-button");
   const p = document.createElement("p");
   const img = document.createElement("img");
   img.src = "./assets/coffee-cup.svg";
@@ -31,7 +35,7 @@ function createHeader() {
 
   headerWrapper.append(logo, nav, a);
   header.append(headerWrapper);
+  document.body.append(header);
 }
 
 export default createHeader;
-
