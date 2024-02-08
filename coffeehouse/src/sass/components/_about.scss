@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.about__wrapper,
+.about__img-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.about__img-wrapper {
+  flex-direction: column;
+  width: fit-content;
+}
+
+.about__img {
+  width: 66rem;
+  height: 59rem;
+  object-fit: cover;
+  border-radius: 20px;
+
+  &.about__img_short {
+    height: 43rem;
+  }
+}
+
