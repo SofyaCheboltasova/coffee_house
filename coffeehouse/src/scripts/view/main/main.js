@@ -10,7 +10,7 @@ function createMain() {
   accent.classList.add("text__accent");
   accent.textContent = "Enjoy ";
   text.textContent = "premium coffee at our charming cafe";
-  h1.classList.add("text__light-bold");
+  h1.classList.add("text__light-h1");
   h1.append(accent, text);
 
   const p = document.createElement("p");

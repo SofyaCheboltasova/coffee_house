@@ -1,5 +1,5 @@
 .button {
-  background-color: $color-background;
+  background: $color-background;
   width: 200px;
   height: 64px;
   text-align: center;
@@ -29,7 +29,8 @@
   }
 }
 
-.button__circle {
+.button__circle_dark,
+.button__circle_light {
   width: 6rem;
   height: 6rem;
   border: 1px solid $color-border-dark;
@@ -40,30 +41,66 @@
   align-items: center;
 
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button__circle_dark:hover {
+  background: $color-container;
+
+  .button__left {
+    background: url("../assets/buttons/button-left-light.svg") no-repeat;
+  }
+  .button__right {
+    background: url("../assets/buttons/button-right-light.svg") no-repeat;
+  }
+}
+
+.button__circle_light {
+  border: 1px solid $color-border-light;
 
   &:hover {
-    background: $color-container;
-    transition: all 0.5s;
+    background: $color-background;
 
-    .button__left {
-      background: url("../assets/buttons/button-left-light.svg") no-repeat;
+    .button__twitter {
+      background: url("../assets/buttons/twitter-dark.svg") no-repeat;
     }
-    .button__right {
-      background: url("../assets/buttons/button-right-light.svg") no-repeat;
+    .button__instagram {
+      background: url("../assets/buttons/instagram-dark.svg") no-repeat;
+    }
+    .button__facebook {
+      background: url("../assets/buttons/facebook-dark.svg") no-repeat;
     }
   }
 }
 
-.button__left {
-  background: url("../assets/buttons/button-left.svg") no-repeat;
+.button__twitter {
+  background: url("../assets/buttons/twitter-light.svg") no-repeat;
+}
+.button__instagram {
+  background: url("../assets/buttons/instagram-light.svg") no-repeat;
+}
+.button__facebook {
+  background: url("../assets/buttons/facebook-light.svg") no-repeat;
+}
+
+.button__instagram,
+.button__twitter,
+.button__facebook {
+  width: 24px;
+  height: 24px;
+}
+
+.button__left,
+.button__right {
   width: 14px;
   height: 14px;
+}
+.button__left {
+  background: url("../assets/buttons/button-left.svg") no-repeat;
 }
 
 .button__right {
   background: url("../assets/buttons/button-right.svg") no-repeat;
-  width: 14px;
-  height: 14px;
 }
 
 .button__app-store,

@@ -49,6 +49,8 @@
 
   &:hover {
     background: $color-border-dark;
+    scale: 1.1;
+    transition: all 0.5s;
   }
 }
 

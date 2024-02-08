@@ -2,7 +2,7 @@ function createButton(side) {
   const button = document.createElement("div");
   const buttonImg = document.createElement("div");
   buttonImg.classList.add(`button__${side}`);
-  button.classList.add("button__circle");
+  button.classList.add("button__circle_dark");
   button.appendChild(buttonImg);
   return button;
 }
@@ -27,9 +27,9 @@ function createSlider() {
   content.classList.add("slider__content");
   img.classList.add("slider__img");
   desscription.classList.add("slider__description");
-  h3.classList.add("text__dark-bold", "slider__header");
+  h3.classList.add("text__dark-h3", "slider__header");
   p.classList.add("text__dark-medium", "slider__info");
-  price.classList.add("text__dark-bold", "slider__price");
+  price.classList.add("text__dark-h3", "slider__price");
 
   h3.textContent = "S’mores Frappuccino";
   p.textContent =
