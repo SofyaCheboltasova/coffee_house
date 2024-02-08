@@ -9,7 +9,7 @@
 }
 
 .about__img-wrapper {
-  @include flex($direction: column);
+  @include flex($direction: column, $gap: 40px);
 
   width: fit-content;
 }
