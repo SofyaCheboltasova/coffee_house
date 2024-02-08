@@ -1,7 +1,7 @@
 function createHeader() {
   const header = document.createElement("header");
-  header.classList.add("header");
   const headerWrapper = document.createElement("div");
+  header.classList.add("header");
   headerWrapper.classList.add("header__wrapper");
 
   const logo = document.createElement("a");
@@ -25,11 +25,10 @@ function createHeader() {
   nav.appendChild(ul);
 
   const a = document.createElement("a");
-  a.classList.add("header__menu-button");
   const p = document.createElement("p");
   const img = document.createElement("img");
+  a.classList.add("header__menu-button");
   img.src = "./assets/coffee-cup.svg";
-  img.alt = "coffee cup";
   p.textContent = "Menu";
   a.append(p, img);
 

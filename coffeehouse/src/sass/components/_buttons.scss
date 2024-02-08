@@ -1,0 +1,31 @@
+.button {
+  background-color: $color-background;
+  width: 200px;
+  height: 64px;
+  text-align: center;
+  color: $color-text-dark;
+  border-radius: 100px;
+}
+
+.button__img {
+  opacity: 0;
+}
+
+.button__menu {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  font: $font-link-button;
+  cursor: pointer;
+
+  &:hover .button__img {
+    opacity: 1;
+    background: url("../assets/coffee-cup.svg");
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
+    transition: opacity 1s;
+  }
+}
+
