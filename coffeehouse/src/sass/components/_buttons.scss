@@ -4,7 +4,7 @@
   height: 64px;
   text-align: center;
   color: $color-text-dark;
-  border-radius: 100px;
+  border-radius: $button-border-radius;
 }
 
 .button__img {
@@ -27,5 +27,40 @@
     margin-bottom: 3px;
     transition: opacity 1s;
   }
+}
+
+.button__circle {
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid $color-border-dark;
+  border-radius: $button-border-radius;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover,
+  &:not(:hover) {
+    scale: 1.2;
+    transition: all 0.3s ease;
+  }
+
+  &:not(:hover) {
+    scale: 1;
+  }
+}
+
+.button__left {
+  background: url("../assets/buttons/button-left.svg") no-repeat;
+  width: 14px;
+  height: 14px;
+}
+
+.button__right {
+  background: url("../assets/buttons/button-right.svg") no-repeat;
+  width: 14px;
+  height: 14px;
 }
 

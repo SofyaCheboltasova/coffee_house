@@ -1,12 +1,7 @@
 .main {
   background-image: url("../assets/main-img.png");
   object-fit: cover;
-  width: 100%;
-  max-width: $max-width;
-  margin: 0 auto;
   height: 64.4rem;
-  position: relative;
-  top: $header-height;
   border-radius: 40px;
 }
 
@@ -16,20 +11,5 @@
   gap: 4rem;
   padding: 100px 0 100px 100px;
   width: 630px;
-}
-
-.main__header {
-  font: $font-header;
-  color: $color-text-light;
-
-  .text_accent {
-    font-style: italic;
-    color: $color-text-accent;
-  }
-}
-
-.main__text {
-  font: $font-medium;
-  color: $color-text-light;
 }
 

@@ -1,0 +1,54 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.slider__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.slider__img {
+  background: url("../assets/coffee-sliders/coffee-slider-1.png");
+  height: 48rem;
+  width: 48rem;
+}
+
+.slider__content,
+.slider__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 48rem;
+}
+
+.slider__description {
+  gap: 16px;
+}
+
+.slider__indicators {
+  display: flex;
+  gap: 12px;
+}
+
+.slider__indicator {
+  width: 4rem;
+  height: 0.4rem;
+  background: $color-border-light;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-border-dark;
+  }
+}
+

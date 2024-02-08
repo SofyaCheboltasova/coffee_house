@@ -7,16 +7,16 @@ function createMain() {
   const h1 = document.createElement("h1");
   const accent = document.createElement("span");
   const text = document.createElement("span");
-  accent.classList.add("text_accent");
+  accent.classList.add("text__accent");
   accent.textContent = "Enjoy ";
   text.textContent = "premium coffee at our charming cafe";
-  h1.classList.add("main__header");
+  h1.classList.add("text__light-bold");
   h1.append(accent, text);
 
   const p = document.createElement("p");
   p.textContent =
     "With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage";
-  p.classList.add("main__text");
+  p.classList.add("text__light-medium");
 
   const button = document.createElement("a");
   const menuText = document.createElement("span");
@@ -30,7 +30,7 @@ function createMain() {
   mainWrapper.append(h1, p, button);
   main.append(mainWrapper);
 
-  document.body.appendChild(main);
+  return main;
 }
 
 export default createMain;
