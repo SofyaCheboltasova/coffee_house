@@ -13,10 +13,7 @@
 }
 
 .button__menu {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+  @include flex($align-items: center, $justify-content: center, $gap: 8px);
   font: $font-link-button;
 
   &:hover .button__img {
@@ -36,9 +33,7 @@
   border: 1px solid $color-border-dark;
   border-radius: $button-border-radius;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex($align-items: center, $justify-content: center, $gap: 8px);
 
   cursor: pointer;
   transition: all 0.5s;
@@ -105,10 +100,9 @@
 
 .button__app-store,
 .button__google-play {
-  display: flex;
-  align-items: center;
+  @include flex($align-items: center, $gap: 10px);
+
   padding-left: 20px;
-  gap: 10px;
   font: $font-link-button;
   border: 1px solid $color-border-dark;
 
@@ -128,8 +122,6 @@
 }
 
 .button__text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  @include flex($direction: column, $text-align: left);
 }
 

@@ -8,9 +8,7 @@
 }
 
 .header__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex($align-items: center, $justify-content: space-between);
 
   padding: $up-right-padding $bottom-left-padding;
   margin: 0 auto;
@@ -21,13 +19,12 @@
 }
 
 .header__navigation {
-  display: flex;
-  gap: 4rem;
+  @include flex($gap: 4rem);
 }
 
 .header__menu-button {
-  display: flex;
-  gap: 8px;
+  @include flex($gap: 8px);
+
   cursor: pointer;
   align-items: center;
 

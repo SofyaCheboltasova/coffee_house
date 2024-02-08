@@ -1,16 +1,15 @@
 .slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+  @include flex(
+    $direction: column,
+    $align-items: center,
+    $justify-content: center,
+    $gap: 40px
+  );
   width: 100%;
 }
 
 .slider__wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex($align-items: center, $justify-content: space-between);
   width: 100%;
 }
 
@@ -22,12 +21,14 @@
 
 .slider__content,
 .slider__description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
+  @include flex(
+    $direction: column,
+    $align-items: center,
+    $justify-content: center,
+    $text-align: center,
+    $gap: 20px
+  );
+
   width: 48rem;
 }
 

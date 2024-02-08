@@ -4,35 +4,28 @@
   border-radius: 40px;
   margin: 0 auto;
 
-  display: flex;
-  align-items: center;
-  gap: 100px;
+  @include flex($align-items: center, $gap: 100px);
+
   padding: 100px;
 }
 
 .footer__offer,
 .footer__contacts {
+  @include flex($direction: column, $gap: 40px);
   width: 53rem;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
 }
 
 .footer__buttons {
-  display: flex;
-  gap: 12px;
+  @include flex($gap: 12px);
 }
 
 .footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  @include flex($direction: column, $gap: 16px);
 }
 
 .footer_link {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  @include flex($align-items: center, $gap: 8px);
+
   color: $color-text-light;
   font: $font-link-button;
   cursor: pointer;

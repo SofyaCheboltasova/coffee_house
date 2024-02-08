@@ -1,7 +1,5 @@
 .main-block {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+  @include flex($direction: column, $gap: 100px);
 
   position: relative;
   top: $header-height;

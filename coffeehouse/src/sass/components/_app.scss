@@ -1,13 +1,11 @@
 .app {
-  display: flex;
+  @include flex($justify-content: center);
   gap: 100px;
-  justify-content: center;
 }
 
 .app__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include flex($direction: column, $justify-content: center);
+
   width: 63rem;
   gap: 40px;
 }
@@ -23,15 +21,17 @@
   gap: 20px;
 }
 
-.app-store__icon {
-  background: url("../assets/buttons/app-store.svg") no-repeat;
+.app-store__icon,
+.google-play__icon {
   width: 36px;
   height: 36px;
 }
 
+.app-store__icon {
+  background: url("../assets/buttons/app-store.svg") no-repeat;
+}
+
 .google-play__icon {
   background: url("../assets/buttons/google-play.svg") no-repeat;
-  width: 36px;
-  height: 36px;
 }
 

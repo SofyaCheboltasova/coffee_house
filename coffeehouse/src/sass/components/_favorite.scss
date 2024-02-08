@@ -3,11 +3,13 @@
 }
 
 .favorite__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: center;
+  @include flex(
+    $direction: column,
+    $justify-content: space-between,
+    $align-items: center,
+    $gap: 40px
+  );
+
   width: 1360px;
   margin: 0 auto;
 }
