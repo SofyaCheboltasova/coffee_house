@@ -5,6 +5,7 @@
   text-align: center;
   color: $color-text-dark;
   border-radius: $button-border-radius;
+  cursor: pointer;
 }
 
 .button__img {
@@ -17,7 +18,6 @@
   justify-content: center;
   align-items: center;
   font: $font-link-button;
-  cursor: pointer;
 
   &:hover .button__img {
     opacity: 1;
@@ -41,14 +41,16 @@
 
   cursor: pointer;
 
-  &:hover,
-  &:not(:hover) {
-    scale: 1.2;
-    transition: all 0.3s ease;
-  }
+  &:hover {
+    background: $color-container;
+    transition: all 0.5s;
 
-  &:not(:hover) {
-    scale: 1;
+    .button__left {
+      background: url("../assets/buttons/button-left-light.svg") no-repeat;
+    }
+    .button__right {
+      background: url("../assets/buttons/button-right-light.svg") no-repeat;
+    }
   }
 }
 
@@ -62,5 +64,35 @@
   background: url("../assets/buttons/button-right.svg") no-repeat;
   width: 14px;
   height: 14px;
+}
+
+.button__app-store,
+.button__google-play {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 10px;
+  font: $font-link-button;
+  border: 1px solid $color-border-dark;
+
+  &:hover {
+    color: $color-text-light;
+    background: $color-container;
+    transition: all 0.5s;
+
+    .app-store__icon {
+      background: url("../assets/buttons/app-store-light.svg") no-repeat;
+    }
+
+    .google-play__icon {
+      background: url("../assets/buttons/google-play-light.svg") no-repeat;
+    }
+  }
+}
+
+.button__text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
