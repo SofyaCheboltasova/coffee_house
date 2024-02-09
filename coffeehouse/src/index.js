@@ -8,6 +8,7 @@ import createApp from "./scripts/view/main/app";
 import createFooter from "./scripts/view/main/footer";
 
 import createOffer from "./scripts/view/menu/offer";
+import loadProducts from "./scripts/controller/menu/loadProducts";
 
 function createMainPage() {
   const main = createMain();
@@ -22,16 +23,19 @@ function createMainPage() {
   return mainBlock;
 }
 
-function createMenu() {
+async function createMenu() {
   const offer = createOffer();
+  const products = await loadProducts();
+
   const mainBlock = document.createElement("main");
   mainBlock.classList.add("main-block");
-  mainBlock.append(offer);
+  mainBlock.append(offer, products);
+
   return mainBlock;
 }
 
 createHeader();
 // eslint-disable-next-line no-unused-vars
 const main = createMainPage();
-const menu = createMenu();
+const menu = await createMenu();
 document.body.append(menu);
