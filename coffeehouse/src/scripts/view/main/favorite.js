@@ -60,7 +60,7 @@ function createFavourite() {
   favorite.classList.add("favorite");
   favoriteWrapper.classList.add("favorite__wrapper");
 
-  const h1 = document.createElement("h1");
+  const h2 = document.createElement("h2");
   const accent = document.createElement("span");
   const textStart = document.createElement("span");
   const textEnd = document.createElement("span");
@@ -70,12 +70,12 @@ function createFavourite() {
   textStart.textContent = "Choose your";
   textEnd.textContent = "coffee";
 
-  h1.classList.add("text__dark");
-  h1.append(textStart, accent, textEnd);
+  h2.classList.add("text__dark-h2");
+  h2.append(textStart, accent, textEnd);
 
   const slider = createSlider();
 
-  favoriteWrapper.append(h1, slider);
+  favoriteWrapper.append(h2, slider);
   favorite.append(favoriteWrapper);
   return favorite;
 }

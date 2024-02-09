@@ -1,15 +1,15 @@
 function createrHeader() {
-  const h1 = document.createElement("h1");
+  const h2 = document.createElement("h2");
   const accent = document.createElement("span");
   const text = document.createElement("span");
 
-  h1.classList.add("text__dark");
+  h2.classList.add("text__dark-h2");
   accent.classList.add("text__accent");
   accent.textContent = "Download ";
 
   text.textContent = "our apps to start ordering";
-  h1.append(accent, text);
-  return h1;
+  h2.append(accent, text);
+  return h2;
 }
 
 function createButtonText(text, name) {

@@ -35,7 +35,7 @@ function createAbout() {
   about.classList.add("about");
   aboutWrapper.classList.add("about__wrapper");
 
-  const h1 = document.createElement("h1");
+  const h2 = document.createElement("h2");
   const accent = document.createElement("span");
   const textStart = document.createElement("span");
   const textEnd = document.createElement("span");
@@ -46,11 +46,11 @@ function createAbout() {
   textEnd.textContent =
     "where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.";
 
-  h1.classList.add("text__dark");
-  h1.append(textStart, accent, textEnd);
+  h2.classList.add("text__dark-h2");
+  h2.append(textStart, accent, textEnd);
 
   const gallery = createGallery(aboutWrapper);
-  about.append(h1, gallery);
+  about.append(h2, gallery);
   return about;
 }
 

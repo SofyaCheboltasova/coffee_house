@@ -1,0 +1,52 @@
+.offer {
+  @include flex(
+    $direction: column,
+    $justify-content: center,
+    $align-items: center,
+    $text-align: center,
+    $gap: 40px
+  );
+}
+
+.offer__header {
+  width: 80rem;
+}
+
+.offer__tabs {
+  @include flex(
+    $justify-content: center,
+    $align-items: center,
+    $text-align: center,
+    $gap: 16px
+  );
+}
+
+.offer__button {
+  @include flex($align-items: center, $gap: 8px);
+  cursor: pointer;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid $color-border-light;
+  border-radius: 100px;
+
+  font: $font-link-button;
+  color: $color-text-dark;
+
+  &:hover {
+    color: $color-text-light;
+    background: $color-container;
+    transition: all 0.5s;
+
+    .offer__icon {
+      background-color: $color-background;
+    }
+  }
+}
+
+.offer__icon {
+  @include flex($justify-content: center, $align-items: center);
+  width: 30px;
+  height: 30px;
+  background-color: $color-border-light;
+  border-radius: 100px;
+}
+
