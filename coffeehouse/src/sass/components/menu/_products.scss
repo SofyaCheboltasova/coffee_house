@@ -1,0 +1,6 @@
+.products {
+  @include flex($justify-content: center, $gap: 40px);
+  flex-wrap: wrap;
+  margin-top: -60px;
+}
+

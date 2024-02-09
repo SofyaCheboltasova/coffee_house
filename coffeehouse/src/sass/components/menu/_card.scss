@@ -1,0 +1,27 @@
+.card {
+  @include flex(
+    $direction: column,
+    // $justify-content: space-between,
+    $text-align: left
+  );
+  width: 31rem;
+  height: 50.6rem;
+  border: 1px solid $color-border-light;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.card__img {
+  border-radius: 40px;
+}
+
+.card__info {
+  padding: 20px;
+  height: 100%;
+  @include flex($direction: column, $justify-content: space-between);
+}
+
+.card__info_text {
+  @include flex($direction: column, $gap: 12px);
+}
+

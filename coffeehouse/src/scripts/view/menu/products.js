@@ -4,12 +4,16 @@ function createCard(product) {
   const { name, description, price, img, category } = product;
 
   const card = document.createElement("div");
+  card.classList.add("card");
+
   const imgTag = document.createElement("img");
   imgTag.classList.add("card__img");
   imgTag.src = `../assets/${category}/${img}`;
 
   const info = document.createElement("div");
+  const text = document.createElement("div");
   info.classList.add("card__info");
+  text.classList.add("card__info_text");
 
   const header = document.createElement("h3");
   const desc = document.createElement("div");
@@ -20,9 +24,10 @@ function createCard(product) {
 
   header.textContent = name;
   desc.textContent = description;
-  priceTag.textContent = price;
+  priceTag.textContent = `$${price}`;
 
-  info.append(header, desc, priceTag);
+  text.append(header, desc);
+  info.append(text, priceTag);
   card.append(imgTag, info);
 
   return card;
