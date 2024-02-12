@@ -59,6 +59,7 @@ function createTabs() {
 function createOffer() {
   const offer = document.createElement("div");
   offer.classList.add("offer");
+  offer.id = "#menu";
   const header = createHeader();
   const tabs = createTabs();
 

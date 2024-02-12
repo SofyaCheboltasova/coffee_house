@@ -1,5 +1,10 @@
-import createProductsGrid from "../../view/menu/products";
-import getProducts from "../../model/menu/getProducts";
+import createProductsGrid from "./pageTemplates/products";
+
+async function getProducts() {
+  const response = await fetch("../assets/dataJson/products.json");
+  const products = await response.json();
+  return products;
+}
 
 async function loadProducts(category = "coffee") {
   const products = await getProducts();

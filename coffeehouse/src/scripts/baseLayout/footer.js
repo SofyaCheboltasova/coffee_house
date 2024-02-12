@@ -64,10 +64,12 @@ function createContactInfo() {
 }
 
 function createFooter() {
-  const footer = document.createElement("section");
+  const footer = document.createElement("footer");
+  const footerWrapper = document.createElement("div");
   const offer = document.createElement("div");
   const contacts = document.createElement("div");
   footer.classList.add("footer");
+  footerWrapper.classList.add("footer__wrapper");
   offer.classList.add("footer__offer");
   contacts.classList.add("footer__contacts");
 
@@ -76,14 +78,16 @@ function createFooter() {
   offer.append(header, buttons);
 
   const contactsHeader = document.createElement("h3");
-  contactsHeader.classList.add("text__dark-h3");
+  contactsHeader.classList.add("text__light-h3");
   contactsHeader.textContent = "Contact us";
   const contactsInfo = createContactInfo();
 
   contacts.append(contactsHeader, contactsInfo);
 
-  footer.append(offer, contacts);
+  footerWrapper.append(offer, contacts);
+  footer.appendChild(footerWrapper);
 
+  document.body.append(footer);
   return footer;
 }
 
