@@ -32,17 +32,17 @@ async function loadPage(page) {
   }
 }
 
-function updatePageFromUrl() {
+async function updatePageFromUrl() {
   const state = getStateFromUrl();
 
   createHeader();
-  loadPage(state);
+  await loadPage(state);
   createFooter();
 
   window.addEventListener("hashchange", async (event) => {
     const page = event.newURL.split("#")[1];
     clearPage();
-    loadPage(page);
+    await loadPage(page);
   });
 }
 
