@@ -34,12 +34,14 @@ function createCard(product) {
 }
 
 function createProductsGrid(products) {
-  const productsTag = document.querySelector(".zeroOpacity");
+  const productsTag = document.querySelectorAll(".zeroOpacity");
 
   if (productsTag) {
-    productsTag.classList.add("fadeOut");
-    productsTag.addEventListener("animationend", () => {
-      productsTag.remove();
+    productsTag.forEach((tag) => {
+      tag.classList.add("fadeOut");
+      tag.addEventListener("animationend", () => {
+        tag.remove();
+      });
     });
   }
 

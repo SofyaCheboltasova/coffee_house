@@ -4,14 +4,24 @@ import createAbout from "./pageTamplates/about";
 import createApp from "./pageTamplates/app";
 import getMainBlock from "../baseLayout/getMainBlock";
 
-// function unsetMain() {
-//   const mainBlock = document.querySelector(".main-block");
-//   mainBlock.childNodes.forEach((node) => {
-//     node.classList.add("hidden");
-//   });
-// }
+function isHidden() {
+  const mainBlock = document.querySelector(".main");
+  return mainBlock !== null;
+}
 
 function setMain() {
+  const hiddenBlocks = [
+    document.querySelector(".main"),
+    document.querySelector(".favorite"),
+    document.querySelector(".about"),
+    document.querySelector(".app"),
+  ];
+  hiddenBlocks.forEach((block) => {
+    block.classList.remove("hidden");
+  });
+}
+
+function createMainPage() {
   const main = createMain();
   const favorite = createFavourite();
   const about = createAbout();
@@ -22,7 +32,13 @@ function setMain() {
 }
 
 function loadMain() {
-  setMain();
+  const hidden = isHidden();
+
+  if (hidden) {
+    setMain();
+  } else {
+    createMainPage();
+  }
 }
 
 export default loadMain;

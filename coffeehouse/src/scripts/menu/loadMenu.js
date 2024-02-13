@@ -10,9 +10,7 @@ function setMenu() {
   ];
 
   hiddenBlocks.forEach((block) => {
-    if (block.classList.contains("hidden")) {
-      block.classList.remove("hidden");
-    }
+    block.classList.remove("hidden");
   });
 }
 

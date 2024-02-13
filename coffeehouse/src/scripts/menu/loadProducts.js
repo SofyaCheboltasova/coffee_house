@@ -18,9 +18,9 @@ async function loadProducts(category = "coffee") {
 }
 
 async function updateProducts(category) {
-  const updatedProducts = await loadProducts(category);
+  const updatedProductsTag = await loadProducts(category);
   const mainBlock = getMainBlock();
-  mainBlock.append(updatedProducts);
+  mainBlock.append(updatedProductsTag);
 }
 
 export { loadProducts, updateProducts };

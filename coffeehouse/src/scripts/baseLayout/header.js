@@ -2,7 +2,7 @@ function createLogo() {
   const logo = document.createElement("a");
   const logoImg = document.createElement("img");
   logoImg.src = "./assets/logo.svg";
-  logo.href = "/";
+  logo.href = "#home";
   logo.classList.add("header__logo");
   logo.append(logoImg);
 
