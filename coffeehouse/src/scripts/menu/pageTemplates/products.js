@@ -34,15 +34,24 @@ function createCard(product) {
 }
 
 function createProductsGrid(products) {
-  const productsTag = document.createElement("div");
-  productsTag.classList.add("products");
+  const productsTag = document.querySelector(".zeroOpacity");
+
+  if (productsTag) {
+    productsTag.classList.add("fadeOut");
+    productsTag.addEventListener("animationend", () => {
+      productsTag.remove();
+    });
+  }
+
+  const productsTagNew = document.createElement("div");
+  productsTagNew.classList.add("products", "zeroOpacity");
 
   for (const product of products) {
     const card = createCard(product);
-    productsTag.appendChild(card);
+    productsTagNew.appendChild(card);
   }
 
-  return productsTag;
+  return productsTagNew;
 }
 
 export default createProductsGrid;

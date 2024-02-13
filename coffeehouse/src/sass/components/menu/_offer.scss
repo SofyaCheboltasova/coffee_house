@@ -31,7 +31,8 @@
   font: $font-link-button;
   color: $color-text-dark;
 
-  &:hover {
+  &:hover,
+  &.offer__button_active {
     color: $color-text-light;
     background: $color-container;
     transition: all 0.5s;

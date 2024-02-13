@@ -1,4 +1,5 @@
 import createProductsGrid from "./pageTemplates/products";
+import getMainBlock from "../baseLayout/getMainBlock";
 
 async function getProducts() {
   const response = await fetch("../assets/dataJson/products.json");
@@ -16,5 +17,11 @@ async function loadProducts(category = "coffee") {
   return tag;
 }
 
-export default loadProducts;
+async function updateProducts(category) {
+  const updatedProducts = await loadProducts(category);
+  const mainBlock = getMainBlock();
+  mainBlock.append(updatedProducts);
+}
+
+export { loadProducts, updateProducts };
 

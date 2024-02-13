@@ -1,14 +1,42 @@
 .card {
-  @include flex(
-    $direction: column,
-    // $justify-content: space-between,
-    $text-align: left
-  );
+  @include flex($direction: column, $text-align: left);
   width: 31rem;
   height: 50.6rem;
   border: 1px solid $color-border-light;
   border-radius: 40px;
   cursor: pointer;
+
+  opacity: 1;
+}
+
+.zeroOpacity {
+  animation-duration: 0.5s;
+  animation-name: fadein;
+}
+
+.fadeOut {
+  animation-duration: 0.5s;
+  animation-name: fadeout;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .card__img {

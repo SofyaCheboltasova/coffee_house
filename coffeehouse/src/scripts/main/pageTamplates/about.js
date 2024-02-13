@@ -29,12 +29,7 @@ function createGallery(aboutWrapper) {
   return aboutWrapper;
 }
 
-function createAbout() {
-  const about = document.createElement("section");
-  const aboutWrapper = document.createElement("div");
-  about.classList.add("about");
-  aboutWrapper.classList.add("about__wrapper");
-
+function createHeader() {
   const h2 = document.createElement("h2");
   const accent = document.createElement("span");
   const textStart = document.createElement("span");
@@ -49,6 +44,16 @@ function createAbout() {
   h2.classList.add("text__dark-h2");
   h2.append(textStart, accent, textEnd);
 
+  return h2;
+}
+
+function createAbout() {
+  const about = document.createElement("section");
+  const aboutWrapper = document.createElement("div");
+  about.classList.add("about");
+  aboutWrapper.classList.add("about__wrapper");
+
+  const h2 = createHeader();
   const gallery = createGallery(aboutWrapper);
   about.append(h2, gallery);
   return about;

@@ -1,6 +1,7 @@
 import createOffer from "./pageTemplates/offer";
-import loadProducts from "./loadProducts";
+import { loadProducts } from "./loadProducts";
 import getMainBlock from "../baseLayout/getMainBlock";
+import setEventListeners from "./setEventListeners";
 
 function setMenu() {
   const hiddenBlocks = [
@@ -17,7 +18,6 @@ function setMenu() {
 
 async function createMenu() {
   const offer = createOffer();
-
   const products = await loadProducts();
 
   const mainBlock = getMainBlock();
@@ -30,6 +30,7 @@ async function loadMenu() {
   } else {
     await createMenu();
   }
+  setEventListeners();
 }
 
 export default loadMenu;

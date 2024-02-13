@@ -34,18 +34,21 @@ function createTabs() {
 
   for (const tabData of tabsData) {
     const { name, icon } = tabData;
-
     const className = name.toLowerCase();
+
     const tab = document.createElement("div");
     const tabImgWrapper = document.createElement("div");
     const tabImg = document.createElement("img");
     const tabText = document.createElement("div");
 
+    if (className === "coffee") {
+      tab.classList.add("offer__button_active");
+    }
     tab.classList.add("offer__button");
     tabText.classList.add("offer__text");
     tabImgWrapper.classList.add("offer__icon");
-    tabImg.classList.add(`offer__icon_${className}`);
 
+    tab.id = className;
     tabImg.src = icon;
     tabText.textContent = name;
 
