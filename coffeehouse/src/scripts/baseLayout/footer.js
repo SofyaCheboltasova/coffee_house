@@ -35,30 +35,40 @@ function createContactInfo() {
     {
       text: "8558 Green Rd., LA",
       icon: "./assets/icons/pin-alt.svg",
+      href: "https://maps.app.goo.gl/QRU2Ue7CKrNbjTXQA",
     },
     {
       text: "+1 (603) 555-0123",
       icon: "./assets/icons/phone.svg",
+      href: "tel: +1(603)555-0123",
     },
     {
       text: "Mon-Sat: 9:00 AM – 23:00 PM",
       icon: "./assets/icons/clock.svg",
+      href: null,
     },
   ];
 
   const linksWrapper = document.createElement("div");
   linksWrapper.classList.add("footer__links");
   for (const link of links) {
-    const { text, icon } = link;
+    const { text, icon, href } = link;
 
-    const line = document.createElement("div");
+    const a = document.createElement("a");
+    // const line = document.createElement("div");
     const img = document.createElement("img");
     const span = document.createElement("span");
     img.src = icon;
     span.textContent = text;
-    line.append(img, span);
-    line.classList.add("footer_link");
-    linksWrapper.append(line);
+    a.append(img, span);
+    // a.append(l	ine);
+    if (href) {
+      a.href = href;
+      a.target = "_blank";
+    }
+
+    a.classList.add("footer_link");
+    linksWrapper.append(a);
   }
   return linksWrapper;
 }
