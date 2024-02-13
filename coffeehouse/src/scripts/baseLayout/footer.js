@@ -55,13 +55,12 @@ function createContactInfo() {
     const { text, icon, href } = link;
 
     const a = document.createElement("a");
-    // const line = document.createElement("div");
     const img = document.createElement("img");
     const span = document.createElement("span");
     img.src = icon;
     span.textContent = text;
     a.append(img, span);
-    // a.append(l	ine);
+
     if (href) {
       a.href = href;
       a.target = "_blank";
@@ -79,6 +78,7 @@ function createFooter() {
   const offer = document.createElement("div");
   const contacts = document.createElement("div");
   footer.classList.add("footer");
+  footer.id = "contact";
   footerWrapper.classList.add("footer__wrapper");
   offer.classList.add("footer__offer");
   contacts.classList.add("footer__contacts");

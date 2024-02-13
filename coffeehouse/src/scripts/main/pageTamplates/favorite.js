@@ -58,6 +58,7 @@ function createFavourite() {
   const favorite = document.createElement("section");
   const favoriteWrapper = document.createElement("div");
   favorite.classList.add("favorite");
+  favorite.id = "favorite";
   favoriteWrapper.classList.add("favorite__wrapper");
 
   const h2 = document.createElement("h2");

@@ -56,6 +56,7 @@ function createApp() {
   const app = document.createElement("section");
   const content = document.createElement("div");
   app.classList.add("app");
+  app.id = "app";
   content.classList.add("app__content");
 
   const header = createrHeader();

@@ -51,6 +51,7 @@ function createAbout() {
   const about = document.createElement("section");
   const aboutWrapper = document.createElement("div");
   about.classList.add("about");
+  about.id = "about";
   aboutWrapper.classList.add("about__wrapper");
 
   const h2 = createHeader();

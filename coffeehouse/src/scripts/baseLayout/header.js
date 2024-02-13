@@ -9,6 +9,31 @@ function createLogo() {
   return logo;
 }
 
+function setSmoothScroll() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const yOffset = -100;
+          const y =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      });
+    });
+  });
+}
+
 function createNavigation() {
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
@@ -21,6 +46,8 @@ function createNavigation() {
     { name: "Contact us", link: "#contact" },
   ];
 
+  setSmoothScroll();
+
   for (let i = 0; i < links.length; i += 1) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -29,6 +56,7 @@ function createNavigation() {
     li.appendChild(a);
     ul.appendChild(li);
   }
+
   nav.appendChild(ul);
   return nav;
 }
