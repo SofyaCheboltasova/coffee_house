@@ -9,27 +9,45 @@ function createLogo() {
   return logo;
 }
 
-function setSmoothScroll() {
+function setScrollForCurrentPage(targetId) {
+  const targetElement = document.getElementById(targetId);
+
+  if (targetElement) {
+    const yOffset = -100;
+    const y =
+      targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+}
+
+function setScrollForAnotherPage(targetId) {
+  localStorage.setItem("page", targetId);
+  const url = window.location.href.split("#")[0];
+  window.location.href = `${url}#${targetId}`;
+}
+
+function isScrollForAnotherPage(targetId) {
+  const offer = document.querySelector(".offer");
+  const isMenuExists = offer !== null && !offer.classList.contains("hidden");
+  if (targetId === "contact") {
+    return false;
+  }
+  return isMenuExists;
+}
+
+function setSmoothScroll(link) {
   document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll('a[href^="#"]');
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
 
-    links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
+      const targetId = link.href.split("#")[1];
 
-        const targetId = link.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          const yOffset = -100;
-          const y =
-            targetElement.getBoundingClientRect().top +
-            window.pageYOffset +
-            yOffset;
-
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      });
+      if (isScrollForAnotherPage(targetId)) {
+        setScrollForAnotherPage(targetId);
+      } else {
+        setScrollForCurrentPage(targetId);
+      }
     });
   });
 }
@@ -40,19 +58,20 @@ function createNavigation() {
   ul.classList.add("header__navigation");
 
   const links = [
-    { name: "Favorite coffee", link: "#favorite" },
-    { name: "About", link: "#about" },
-    { name: "Mobile app", link: "#app" },
-    { name: "Contact us", link: "#contact" },
+    { name: "Favorite coffee", href: "#favorite" },
+    { name: "About", href: "#about" },
+    { name: "Mobile app", href: "#app" },
+    { name: "Contact us", href: "#contact" },
   ];
-
-  setSmoothScroll();
 
   for (let i = 0; i < links.length; i += 1) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = links[i].link;
+    a.href = links[i].href;
     a.textContent = links[i].name;
+
+    setSmoothScroll(a);
+
     li.appendChild(a);
     ul.appendChild(li);
   }

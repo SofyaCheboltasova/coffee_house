@@ -9,7 +9,7 @@ function isHidden() {
   return mainBlock !== null;
 }
 
-function setMain() {
+function setMain(page) {
   const hiddenBlocks = [
     document.querySelector(".main"),
     document.querySelector(".favorite"),
@@ -19,6 +19,14 @@ function setMain() {
   hiddenBlocks.forEach((block) => {
     block.classList.remove("hidden");
   });
+
+  const targetElement = document.getElementById(page);
+  if (targetElement) {
+    const yOffset = -100;
+    const y =
+      targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    document.documentElement.scrollTo({ top: y, behavior: "smooth" });
+  }
 }
 
 function createMainPage() {
@@ -31,11 +39,11 @@ function createMainPage() {
   mainBlock.append(main, favorite, about, app);
 }
 
-function loadMain() {
+function loadMain(page) {
   const hidden = isHidden();
 
   if (hidden) {
-    setMain();
+    setMain(page);
   } else {
     createMainPage();
   }

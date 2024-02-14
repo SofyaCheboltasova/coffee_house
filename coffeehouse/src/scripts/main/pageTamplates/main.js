@@ -30,6 +30,7 @@ function createMain() {
   const main = document.createElement("section");
   const mainWrapper = document.createElement("div");
   main.classList.add("main");
+  main.id = "home";
   mainWrapper.classList.add("main__wrapper");
 
   const h1 = createHeader();
