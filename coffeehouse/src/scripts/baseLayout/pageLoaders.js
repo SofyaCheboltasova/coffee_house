@@ -5,7 +5,6 @@ import loadMenu from "../menu/loadMenu";
 
 function getStateFromUrl() {
   const url = window.location.href;
-
   const parts = url.split("#");
   return parts[parts.length - 1];
 }
