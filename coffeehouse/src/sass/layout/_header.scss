@@ -44,6 +44,7 @@
     left: 0;
     height: 100vh;
     background-color: $color-background;
+
     animation-duration: 1s;
     animation-name: rightIn;
   }
@@ -52,7 +53,6 @@
   from {
     left: 100vw;
   }
-
   to {
     left: 0;
   }
@@ -105,8 +105,9 @@
     height: 44px;
     width: 44px;
 
-    &.active,
-    &:hover {
+    transition: background-image 1s;
+
+    &.active {
       background-image: url("../assets/buttons/burger-opened.svg");
     }
   }
