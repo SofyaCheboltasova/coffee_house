@@ -10,7 +10,7 @@ function setMenu() {
   ];
 
   hiddenBlocks.forEach((block) => {
-    block.classList.remove("hidden");
+    block.classList.remove("hidden__block");
   });
 }
 

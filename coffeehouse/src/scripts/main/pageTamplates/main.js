@@ -26,13 +26,28 @@ function createMenuButton() {
   return button;
 }
 
+function createBackgroundVideo() {
+  const video = document.createElement("video");
+  const source = document.createElement("source");
+  video.classList.add("main__video");
+
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
+  source.src = "./assets/background.mp4";
+  video.appendChild(source);
+
+  return video;
+}
+
 function createMain() {
   const main = document.createElement("section");
   const mainWrapper = document.createElement("div");
   main.classList.add("main");
   main.id = "home";
-  mainWrapper.classList.add("main__wrapper");
+  mainWrapper.classList.add("main__content");
 
+  const video = createBackgroundVideo();
   const h1 = createHeader();
   const button = createMenuButton();
 
@@ -42,7 +57,7 @@ function createMain() {
   p.classList.add("text__light-medium");
 
   mainWrapper.append(h1, p, button);
-  main.append(mainWrapper);
+  main.append(video, mainWrapper);
 
   return main;
 }

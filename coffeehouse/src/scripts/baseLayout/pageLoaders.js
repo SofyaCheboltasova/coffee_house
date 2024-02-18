@@ -12,7 +12,7 @@ function getStateFromUrl() {
 function clearPage() {
   const mainBlock = document.querySelector(".main-block");
   mainBlock.childNodes.forEach((node) => {
-    node.classList.add("hidden");
+    node.classList.add("hidden__block");
   });
 }
 

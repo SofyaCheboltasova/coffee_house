@@ -1,7 +1,11 @@
+.hidden__block,
+.hidden {
+  display: none;
+}
+
 .hidden {
   animation-duration: 1s;
   animation-name: rightOut;
-  display: none;
 }
 
 @keyframes rightOut {

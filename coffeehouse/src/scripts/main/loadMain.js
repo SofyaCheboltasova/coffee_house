@@ -17,7 +17,7 @@ function setMain(page) {
     document.querySelector(".app"),
   ];
   hiddenBlocks.forEach((block) => {
-    block.classList.remove("hidden");
+    block.classList.remove("hidden__block");
   });
 
   const targetElement = document.getElementById(page);

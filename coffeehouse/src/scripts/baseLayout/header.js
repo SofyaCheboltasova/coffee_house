@@ -95,7 +95,7 @@ function createNavigation(burgerButton) {
   nav.appendChild(ul);
 
   if (burgerButton) {
-    nav.classList.add("hidden");
+    nav.classList.toggle("hidden");
 
     const menuLink = createMenuButton("burger");
     menuLink.addEventListener("click", () => {
