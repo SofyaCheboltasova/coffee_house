@@ -30,9 +30,12 @@ html {
 
 body {
   margin: 0;
-  // font-family: "Sofia Sans", sans-serif;
   font-family: "Stick", sans-serif;
   background-color: $color-background;
+
+  // @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  //   overflow: hidden;
+  // }
 }
 
 /**

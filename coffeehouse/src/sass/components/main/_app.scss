@@ -1,19 +1,29 @@
 .app {
-  @include flex($justify-content: center);
-  gap: 100px;
+  @include flex($justify-content: center, $gap: 100px);
+
+  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+    flex-direction: column;
+  }
 }
 
 .app__content {
-  @include flex($direction: column, $justify-content: center);
-
+  @include flex($direction: column, $justify-content: center, $gap: 40px);
   width: 63rem;
-  gap: 40px;
+
+  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+    justify-content: start;
+    width: unset;
+  }
 }
 
 .app__phones {
   background: url("../assets/mobile-screens.png");
   width: 63rem;
   height: 63rem;
+
+  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+    align-self: center;
+  }
 }
 
 .app__buttons {

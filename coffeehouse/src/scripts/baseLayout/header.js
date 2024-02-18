@@ -36,11 +36,10 @@ function isScrollForAnotherPage(targetId) {
   return isMenuExists;
 }
 
-function setSmoothScroll(link) {
+function setSmoothScroll(link, nav, burgerButton) {
   document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-
       const targetId = link.href.split("#")[1];
 
       if (isScrollForAnotherPage(targetId)) {
@@ -48,14 +47,32 @@ function setSmoothScroll(link) {
       } else {
         setScrollForCurrentPage(targetId);
       }
+
+      if (burgerButton) {
+        nav.classList.toggle("hidden");
+        burgerButton.classList.toggle("active");
+      }
     });
   });
 }
 
-function createNavigation() {
+function createMenuButton(className) {
+  const a = document.createElement("a");
+  const p = document.createElement("p");
+  const img = document.createElement("img");
+  a.classList.add(`header__button_${className}`);
+  a.href = "#menu";
+  img.src = "./assets/coffee-cup.svg";
+  p.textContent = "Menu";
+  a.append(p, img);
+  return a;
+}
+
+function createNavigation(burgerButton) {
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
   ul.classList.add("header__navigation");
+  nav.classList.add(`header__navigation_wrapper`);
 
   const links = [
     { name: "Favorite coffee", href: "#favorite" },
@@ -70,41 +87,56 @@ function createNavigation() {
     a.href = links[i].href;
     a.textContent = links[i].name;
 
-    setSmoothScroll(a);
+    setSmoothScroll(a, nav, burgerButton);
 
     li.appendChild(a);
     ul.appendChild(li);
   }
-
   nav.appendChild(ul);
+
+  if (burgerButton) {
+    nav.classList.add("hidden");
+
+    const menuLink = createMenuButton("burger");
+    menuLink.addEventListener("click", () => {
+      nav.classList.toggle("hidden");
+      burgerButton.classList.toggle("active");
+    });
+    nav.appendChild(menuLink);
+  }
+
   return nav;
 }
 
-function createMenuButton() {
-  const a = document.createElement("a");
-  const p = document.createElement("p");
-  const img = document.createElement("img");
-  a.classList.add("header__menu-button");
-  a.href = "#menu";
-  img.src = "./assets/coffee-cup.svg";
-  p.textContent = "Menu";
-  a.append(p, img);
-
-  return a;
+function setBurgerClickListener(button, nav) {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    button.classList.toggle("active");
+    nav.classList.toggle("hidden");
+  });
 }
 
 function createHeader() {
+  const headersNames = ["full", "burger"];
   const header = document.createElement("header");
-  const headerWrapper = document.createElement("div");
   header.classList.add("header");
-  headerWrapper.classList.add("header__wrapper");
 
-  const logo = createLogo();
-  const nav = createNavigation();
-  const button = createMenuButton();
+  headersNames.forEach((name) => {
+    const headerWrapper = document.createElement("div");
+    headerWrapper.classList.add(`header__wrapper_${name}`);
 
-  headerWrapper.append(logo, nav, button);
-  header.append(headerWrapper);
+    const logo = createLogo();
+    const button = createMenuButton("full");
+    let nav = createNavigation();
+
+    if (name === "burger") {
+      nav = createNavigation(button);
+      setBurgerClickListener(button, nav);
+    }
+
+    headerWrapper.append(logo, nav, button);
+    header.append(headerWrapper);
+  });
   document.body.append(header);
 }
 

@@ -1,7 +1,3 @@
-.favorite {
-  height: 79.9rem;
-}
-
 .favorite__wrapper {
   @include flex(
     $direction: column,
@@ -9,8 +5,10 @@
     $align-items: center,
     $gap: 40px
   );
-
-  width: 1360px;
   margin: 0 auto;
+
+  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+    text-align: center;
+  }
 }
 

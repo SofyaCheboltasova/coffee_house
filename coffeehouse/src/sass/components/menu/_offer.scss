@@ -9,7 +9,9 @@
 }
 
 .offer__header {
-  width: 80rem;
+  @media screen and (min-width: $width-desktop) {
+    width: 80rem;
+  }
 }
 
 .offer__tabs {
