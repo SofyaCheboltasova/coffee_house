@@ -11,12 +11,19 @@
 .slider__wrapper {
   @include flex($align-items: center, $justify-content: space-between);
   width: 100%;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    justify-content: center;
+
+    .button__circle_dark,
+    .button__circle_light {
+      display: none;
+    }
+  }
 }
 
 .slider__img {
-  background: url("../assets/coffee-sliders/coffee-slider-1.png");
-  height: 48rem;
-  width: 48rem;
+  width: 100%;
 }
 
 .slider__content,
@@ -30,6 +37,10 @@
   );
 
   width: 48rem;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    width: 100%;
+  }
 }
 
 .slider__description {

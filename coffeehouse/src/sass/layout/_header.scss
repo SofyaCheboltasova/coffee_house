@@ -20,7 +20,7 @@
 }
 
 .header__wrapper_full {
-  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
     display: none;
   }
 }
@@ -29,10 +29,14 @@
   @media screen and (min-width: $width-desktop) {
     display: none;
   }
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    padding: 20px 16px 0 16px;
+  }
 }
 
 .header__navigation_wrapper {
-  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
     @include flex($direction: column, $align-items: center, $gap: 100px);
     position: absolute;
     width: 100%;
@@ -46,7 +50,7 @@
 .header__navigation {
   @include flex($gap: 4rem);
 
-  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
     background-color: $color-background;
     padding-top: 60px;
 
@@ -80,7 +84,7 @@
 }
 
 .header__button_full {
-  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
     p,
     img {
       display: none;

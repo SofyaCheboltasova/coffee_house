@@ -27,8 +27,8 @@ async function loadMenu() {
     setMenu();
   } else {
     await createMenu();
+    setEventListeners();
   }
-  setEventListeners();
 }
 
 export default loadMenu;

@@ -7,7 +7,7 @@
   );
   margin: 0 auto;
 
-  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
     text-align: center;
   }
 }

@@ -4,6 +4,10 @@
   height: 64.4rem;
   border-radius: 40px;
   background-position: center;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    height: 55.2rem;
+  }
 }
 
 .main__wrapper {
@@ -11,5 +15,10 @@
 
   padding: 100px 0 100px 100px;
   width: 630px;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    padding: 60px 16px;
+    width: unset;
+  }
 }
 

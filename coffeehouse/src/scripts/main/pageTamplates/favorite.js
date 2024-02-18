@@ -18,13 +18,14 @@ function createSlider() {
   const right = createButton("right");
 
   const content = document.createElement("div");
-  const img = document.createElement("div");
+  const img = document.createElement("img");
   const desscription = document.createElement("div");
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
   const price = document.createElement("h3");
 
   content.classList.add("slider__content");
+  img.src = "./assets/coffee-slider-1.png";
   img.classList.add("slider__img");
   desscription.classList.add("slider__description");
   h3.classList.add("text__dark-h3", "slider__header");

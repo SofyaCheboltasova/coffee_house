@@ -21,6 +21,10 @@
     $text-align: center,
     $gap: 16px
   );
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    gap: 8px;
+  }
 }
 
 .offer__button {

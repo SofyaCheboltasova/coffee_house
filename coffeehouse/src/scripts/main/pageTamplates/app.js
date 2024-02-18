@@ -69,7 +69,8 @@ function createApp() {
   const buttons = createButtons();
   content.append(header, p, buttons);
 
-  const phones = document.createElement("div");
+  const phones = document.createElement("img");
+  phones.src = "./assets/mobile-screens.png";
   phones.classList.add("app__phones");
   app.append(content, phones);
 

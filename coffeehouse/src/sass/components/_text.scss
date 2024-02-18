@@ -20,16 +20,28 @@
 .text__light-h1 {
   font: $font-header1;
   color: $color-text-light;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    font: $font-header1-mobile;
+  }
 }
 
 .text__light-h2 {
   font: $font-header2;
   color: $color-text-light;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    font: $font-header2-mobile;
+  }
 }
 
 .text__dark-h2 {
   font: $font-header2;
   color: $color-text-dark;
+
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+    font: $font-header2-mobile;
+  }
 }
 
 .text__dark-h3 {
