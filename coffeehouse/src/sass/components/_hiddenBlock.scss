@@ -1,3 +1,18 @@
 .hidden {
+  animation-duration: 1s;
+  animation-name: rightOut;
   display: none;
 }
+
+@keyframes rightOut {
+  from {
+    left: 0;
+    display: flex;
+  }
+
+  to {
+    left: 100vw;
+    display: none;
+  }
+}
+
