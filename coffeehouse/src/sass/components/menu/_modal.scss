@@ -1,0 +1,84 @@
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000094;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.modal {
+  background-color: $color-background;
+  border-radius: 40px;
+  padding: 16px;
+  width: 80rem;
+
+  @include flex($align-items: start, $gap: 20px);
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  animation: easeIn 1s;
+}
+
+@keyframes easeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal__image {
+  width: 31rem;
+  height: 31rem;
+  border-radius: 40px;
+}
+
+.modal__content {
+  @include flex(
+    $direction: column,
+    $justify-content: space-between,
+    $gap: 20px
+  );
+}
+
+.modal__content_title {
+  @include flex($direction: column, $gap: 12px);
+}
+
+.modal__content_selection {
+  @include flex($direction: column, $gap: 8px);
+}
+
+.modal__content_buttons {
+  @include flex($gap: 8px);
+}
+
+.modal__price {
+  @include flex($justify-content: space-between);
+  width: 100%;
+}
+
+.modal__info {
+  @include flex(
+    $justify-content: space-between,
+    $align-items: start,
+    $gap: 8px
+  );
+
+  border-top: 1px solid $color-border-light;
+  padding: 12px 0;
+}
+
+.modal__button {
+  justify-content: center;
+  padding: 10px 0;
+}
+

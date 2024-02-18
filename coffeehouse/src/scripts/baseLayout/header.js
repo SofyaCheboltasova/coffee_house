@@ -29,7 +29,8 @@ function setScrollForAnotherPage(targetId) {
 
 function isScrollForAnotherPage(targetId) {
   const offer = document.querySelector(".offer");
-  const isMenuExists = offer !== null && !offer.classList.contains("hidden");
+  const isMenuExists =
+    offer !== null && !offer.classList.contains("hidden__block");
   if (targetId === "contact") {
     return false;
   }

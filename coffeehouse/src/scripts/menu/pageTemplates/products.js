@@ -1,10 +1,12 @@
 /* eslint-disable no-restricted-syntax */
+import createModal from "./modal";
 
 function createCard(product) {
-  const { name, description, price, img, category } = product;
+  const { id, name, description, price, img, category } = product;
 
   const card = document.createElement("div");
   card.classList.add("card");
+  card.id = id;
 
   const imgTag = document.createElement("img");
   imgTag.classList.add("card__img");
@@ -29,6 +31,10 @@ function createCard(product) {
   text.append(header, desc);
   info.append(text, priceTag);
   card.append(imgTag, info);
+
+  card.addEventListener("click", () => {
+    createModal(id);
+  });
 
   return card;
 }
