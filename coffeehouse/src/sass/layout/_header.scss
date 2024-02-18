@@ -20,13 +20,13 @@
 }
 
 .header__wrapper_full {
-  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
     display: none;
   }
 }
 
 .header__wrapper_burger {
-  @media screen and (min-width: $width-desktop) {
+  @media screen and (min-width: $width-tablet) {
     display: none;
   }
 
@@ -36,7 +36,7 @@
 }
 
 .header__navigation_wrapper {
-  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
     @include flex($direction: column, $align-items: center, $gap: 100px);
     position: absolute;
     width: 100%;
@@ -61,7 +61,7 @@
 .header__navigation {
   @include flex($gap: 4rem);
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
     background-color: $color-background;
     padding-top: 60px;
 
@@ -95,7 +95,7 @@
 }
 
 .header__button_full {
-  @media screen and (min-width: $width-mobile) and (max-width: $width-desktop) {
+  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
     p,
     img {
       display: none;
