@@ -61,7 +61,7 @@
   @include flex($gap: 8px);
 }
 
-.modal__price {
+.modal__price_wrapper {
   @include flex($justify-content: space-between);
   width: 100%;
 }

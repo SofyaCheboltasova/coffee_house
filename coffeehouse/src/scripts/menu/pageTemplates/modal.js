@@ -32,6 +32,60 @@ function createTitle(name, description) {
   return title;
 }
 
+function changePrice(addedPrice, removedPrice) {
+  const oldPriceTag = document.querySelector(".modal__price");
+  let newPrice = Number(oldPriceTag.textContent.slice(1)) + addedPrice;
+
+  if (removedPrice) {
+    newPrice -= removedPrice;
+  }
+
+  oldPriceTag.textContent = `$${newPrice.toFixed(2)}`;
+}
+
+function getPrices(newActive, prevActive) {
+  const priceClass = ".modal__content_price";
+  const addedPriceTag = newActive.querySelector(priceClass);
+  const addedPrice = Number(addedPriceTag.textContent);
+
+  let removedPrice;
+  if (prevActive) {
+    const removedPriceTag = prevActive.querySelector(priceClass);
+    removedPrice = Number(removedPriceTag.textContent);
+  }
+
+  return { addedPrice, removedPrice };
+}
+
+function setSelectionClickHandler(name, newActive, tabs) {
+  const activeClass = "offer__button_active";
+
+  newActive.addEventListener("click", () => {
+    switch (name) {
+      case "sizes": {
+        const prevActive = tabs.querySelector(`.${activeClass}`);
+        prevActive.classList.remove(activeClass);
+        newActive.classList.add(activeClass);
+
+        const { addedPrice, removedPrice } = getPrices(newActive, prevActive);
+        changePrice(addedPrice, removedPrice);
+        break;
+      }
+      default: {
+        const isAdded = newActive.classList.toggle(activeClass);
+        const { addedPrice } = getPrices(newActive);
+
+        if (isAdded) {
+          changePrice(addedPrice);
+        } else {
+          changePrice(-addedPrice);
+        }
+        break;
+      }
+    }
+  });
+}
+
 function createSelectionBlock(name, data) {
   const block = document.createElement("div");
   block.classList.add(`modal__content_selection`);
@@ -50,25 +104,37 @@ function createSelectionBlock(name, data) {
     const tabNameWrapper = document.createElement("div");
     const tabName = document.createElement("div");
     const tabText = document.createElement("div");
+    const tabPrice = document.createElement("div");
 
     tab.classList.add("offer__button");
     tabText.classList.add("offer__text");
     tabNameWrapper.classList.add("offer__icon");
+    tabPrice.classList.add("modal__content_price", "hidden__block");
 
     const circleText = option[0];
 
-    if (Number.isNaN(Number(circleText))) {
-      tabName.textContent = circleText;
-    } else {
-      tabName.textContent = 1 + Number(circleText);
+    if (circleText === "s") {
+      tab.classList.add("offer__button_active");
     }
 
     const selectionData = Object.entries(option[1]);
     const buttonInnerContent = selectionData[0][1];
     tabText.textContent = buttonInnerContent;
 
+    const addPrice = selectionData[1][1];
+
+    if (Number.isNaN(Number(circleText))) {
+      tabName.textContent = circleText;
+      tabPrice.textContent = addPrice;
+    } else {
+      tabName.textContent = 1 + Number(circleText);
+      tabPrice.textContent = addPrice;
+    }
+
     tabNameWrapper.appendChild(tabName);
-    tab.append(tabNameWrapper, tabText);
+    tab.append(tabNameWrapper, tabText, tabPrice);
+
+    setSelectionClickHandler(name, tab, tabs);
     tabs.append(tab);
   }
 
@@ -79,14 +145,15 @@ function createSelectionBlock(name, data) {
 
 function createModalPrice(price) {
   const totalPrice = document.createElement("div");
-  totalPrice.classList.add("modal__price");
+  totalPrice.classList.add("modal__price_wrapper");
 
   const text = document.createElement("h3");
   text.classList.add("text__dark-h3");
   text.textContent = "Total:";
 
   const textPrice = document.createElement("h3");
-  textPrice.classList.add("text__dark-h3");
+  textPrice.classList.add("text__dark-h3", "modal__price");
+
   textPrice.textContent = `$${price}`;
 
   totalPrice.append(text, textPrice);
