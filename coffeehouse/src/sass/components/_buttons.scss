@@ -39,14 +39,17 @@
   transition: all 0.5s;
 }
 
-.button__circle_dark:hover {
+.button__circle_dark:hover,
+.button__circle_dark:active {
   background: $color-container;
-
   .button__left {
     background: url("../assets/buttons/button-left-light.svg") no-repeat;
   }
   .button__right {
     background: url("../assets/buttons/button-right-light.svg") no-repeat;
+  }
+  .button__refresh {
+    background: url("../assets/buttons/refresh-rotate.svg") no-repeat;
   }
 }
 
@@ -80,7 +83,8 @@
 
 .button__instagram,
 .button__twitter,
-.button__facebook {
+.button__facebook,
+.button__refresh {
   width: 24px;
   height: 24px;
 }
@@ -90,12 +94,17 @@
   width: 14px;
   height: 14px;
 }
+
 .button__left {
   background: url("../assets/buttons/button-left.svg") no-repeat;
 }
 
 .button__right {
   background: url("../assets/buttons/button-right.svg") no-repeat;
+}
+
+.button__refresh {
+  background: url("../assets/buttons/refresh.svg") no-repeat;
 }
 
 .button__app-store,

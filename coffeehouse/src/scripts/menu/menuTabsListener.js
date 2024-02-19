@@ -1,6 +1,6 @@
-import { updateProducts } from "./loadProducts";
+import { updateProductsGrid } from "./products";
 
-function setEventListeners() {
+function menuTabsListener() {
   const menuTabs = document.querySelectorAll(".offer__button");
 
   menuTabs.forEach((tab) => {
@@ -9,10 +9,10 @@ function setEventListeners() {
       activeTab.classList.remove("offer__button_active");
       tab.classList.add("offer__button_active");
 
-      await updateProducts(tab.id);
+      await updateProductsGrid(tab.id);
     });
   });
 }
 
-export default setEventListeners;
+export default menuTabsListener;
 

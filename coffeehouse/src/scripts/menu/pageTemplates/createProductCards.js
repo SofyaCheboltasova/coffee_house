@@ -39,28 +39,32 @@ function createCard(product) {
   return card;
 }
 
-function createProductsGrid(products) {
-  const productsTag = document.querySelectorAll(".zeroOpacity");
+function setCardsAnimation() {
+  const productTags = document.querySelectorAll(".zeroOpacity");
 
-  if (productsTag) {
-    productsTag.forEach((tag) => {
+  if (productTags) {
+    productTags.forEach((tag) => {
+      const parent = tag.parentElement;
       tag.classList.add("fadeOut");
       tag.addEventListener("animationend", () => {
         tag.remove();
+        parent.remove();
       });
     });
   }
-
-  const productsTagNew = document.createElement("div");
-  productsTagNew.classList.add("products", "zeroOpacity");
-
-  for (const product of products) {
-    const card = createCard(product);
-    productsTagNew.appendChild(card);
-  }
-
-  return productsTagNew;
 }
 
-export default createProductsGrid;
+function createProductCards(products) {
+  setCardsAnimation();
+
+  const cardsArray = [];
+  for (const product of products) {
+    const card = createCard(product);
+    cardsArray.push(card);
+  }
+
+  return cardsArray;
+}
+
+export default createProductCards;
 
