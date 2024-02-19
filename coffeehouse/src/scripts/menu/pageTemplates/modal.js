@@ -182,6 +182,7 @@ function closeModal() {
   if (modal && back) {
     main.removeChild(modal);
     document.body.removeChild(back);
+    document.body.style.overflow = "visible";
   }
 }
 
@@ -234,6 +235,7 @@ async function createModal(productId) {
 
   modal.append(image, content);
   main.append(modal);
+  document.body.style.overflow = "hidden";
   document.body.appendChild(background);
 }
 
