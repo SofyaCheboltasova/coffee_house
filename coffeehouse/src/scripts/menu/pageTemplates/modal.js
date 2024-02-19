@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable prefer-destructuring */
 /* eslint-disable no-restricted-syntax */
 async function getProductInfo(productId) {
   const response = await fetch("./assets/dataJson/products.json");

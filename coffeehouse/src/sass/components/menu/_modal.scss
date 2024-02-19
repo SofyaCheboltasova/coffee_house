@@ -13,7 +13,7 @@
   background-color: $color-background;
   border-radius: 40px;
   padding: 16px;
-  width: 80rem;
+  max-width: 80rem;
 
   @include flex($align-items: start, $gap: 20px);
 
@@ -24,6 +24,14 @@
   z-index: 4;
 
   animation: easeIn 1s;
+
+  @media screen and (min-width: $width-tablet) and (max-width: $width-desktop) {
+    width: 68.8rem;
+  }
+
+  @media screen and (max-width: $width-tablet) {
+    width: 34.2rem;
+  }
 }
 
 @keyframes easeIn {
@@ -39,6 +47,10 @@
   width: 31rem;
   height: 31rem;
   border-radius: 40px;
+
+  @media screen and (max-width: $width-tablet) {
+    display: none;
+  }
 }
 
 .modal__content {
@@ -59,6 +71,7 @@
 
 .modal__content_buttons {
   @include flex($gap: 8px);
+  flex-wrap: wrap;
 }
 
 .modal__price_wrapper {
