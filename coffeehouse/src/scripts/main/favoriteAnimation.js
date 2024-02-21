@@ -5,7 +5,7 @@ let slider;
 let favorite;
 
 async function getSlidersData() {
-  const response = await fetch("../assets/dataJson/slider.json");
+  const response = await fetch("./assets/dataJson/slider.json");
   const array = await response.json();
   return array;
 }

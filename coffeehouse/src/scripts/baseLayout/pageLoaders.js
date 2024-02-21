@@ -18,11 +18,6 @@ function clearPage() {
 
 async function loadPage(page) {
   if (page === "menu") {
-    // const timer = localStorage.getItem("timer");
-    // if (timer) {
-    //   clearInterval(parseInt(timer, 10));
-    //   localStorage.removeItem("timer");
-    // }
     await loadMenu();
   } else {
     await loadMain(page);
@@ -44,4 +39,3 @@ async function loadPageFromUrl() {
 }
 
 export default loadPageFromUrl;
-

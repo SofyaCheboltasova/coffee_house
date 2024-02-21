@@ -3,15 +3,15 @@
 const tabsData = [
   {
     name: "Coffee",
-    icon: "../assets/icons/coffee.svg",
+    icon: "./assets/icons/coffee.svg",
   },
   {
     name: "Tea",
-    icon: "../assets/icons/tea.svg",
+    icon: "./assets/icons/tea.svg",
   },
   {
     name: "Dessert",
-    icon: "../assets/icons/dessert.svg",
+    icon: "./assets/icons/dessert.svg",
   },
 ];
 
@@ -71,4 +71,3 @@ function createOffer() {
 }
 
 export default createOffer;
-

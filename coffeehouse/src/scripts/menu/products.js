@@ -10,7 +10,7 @@ function createTagClass() {
 }
 
 async function getProductsData() {
-  const response = await fetch("../assets/dataJson/products.json");
+  const response = await fetch("./assets/dataJson/products.json");
   const products = await response.json();
   return products;
 }
@@ -76,4 +76,3 @@ async function updateProductsGrid(category) {
 }
 
 export { loadProducts, updateProductsGrid };
-

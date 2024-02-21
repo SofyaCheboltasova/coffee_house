@@ -10,7 +10,7 @@ function createCard(product) {
 
   const imgTag = document.createElement("img");
   imgTag.classList.add("card__img");
-  imgTag.src = `../assets/${category}/${img}`;
+  imgTag.src = `./assets/${category}/${img}`;
 
   const info = document.createElement("div");
   const text = document.createElement("div");
@@ -67,4 +67,3 @@ function createProductCards(products) {
 }
 
 export default createProductCards;
-

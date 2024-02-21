@@ -163,7 +163,7 @@ function createModalInfo() {
   info.classList.add("modal__info");
 
   const img = document.createElement("img");
-  img.src = "../assets/icons/info.svg";
+  img.src = "./assets/icons/info.svg";
 
   const text = document.createElement("p");
   text.classList.add("text__small");
@@ -240,4 +240,3 @@ async function createModal(productId) {
 }
 
 export default createModal;
-
