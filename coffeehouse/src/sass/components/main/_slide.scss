@@ -1,0 +1,28 @@
+.slide__img {
+  width: 100%;
+}
+
+.slide__content,
+.slide__description {
+  @include flex(
+    $direction: column,
+    $align-items: center,
+    $justify-content: center,
+    $text-align: center,
+    $gap: 20px
+  );
+
+  width: 48rem;
+}
+
+.slide__description {
+  gap: 16px;
+}
+
+.slide__description_text {
+  max-width: 48rem;
+  @media screen and (max-width: $width-tablet) {
+    width: 90vw;
+  }
+}
+

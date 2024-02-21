@@ -41,7 +41,9 @@
 
 .button__circle_dark:hover,
 .button__circle_dark:active {
-  background: $color-container;
+  @media screen and (min-width: $width-tablet) {
+    background: $color-container;
+  }
   .button__left {
     background: url("../assets/buttons/button-left-light.svg") no-repeat;
   }

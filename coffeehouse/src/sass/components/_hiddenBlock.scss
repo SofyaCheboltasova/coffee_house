@@ -20,3 +20,27 @@
   }
 }
 
+.hidden__carousel_left {
+  animation: toLeft 1500ms ease-in-out;
+  left: 0;
+  position: relative;
+}
+
+@keyframes toLeft {
+  to {
+    left: -48rem;
+  }
+}
+
+.hidden__carousel_right {
+  animation: toRight 1500ms ease-in-out;
+  left: 0;
+  position: relative;
+}
+
+@keyframes toRight {
+  to {
+    left: 48rem;
+  }
+}
+

@@ -1,8 +1,8 @@
 import createMain from "./pageTamplates/main";
-import createFavourite from "./pageTamplates/favorite";
 import createAbout from "./pageTamplates/about";
 import createApp from "./pageTamplates/app";
 import getMainBlock from "../baseLayout/getMainBlock";
+import createFavorite from "./favoriteAnimation";
 
 function isHidden() {
   const mainBlock = document.querySelector(".main");
@@ -29,23 +29,23 @@ function setMain(page) {
   }
 }
 
-function createMainPage() {
-  const main = createMain();
-  const favorite = createFavourite();
+async function createMainPage() {
+  const favorite = await createFavorite();
   const about = createAbout();
   const app = createApp();
+  const main = createMain();
 
   const mainBlock = getMainBlock();
   mainBlock.append(main, favorite, about, app);
 }
 
-function loadMain(page) {
+async function loadMain(page) {
   const hidden = isHidden();
 
   if (hidden) {
     setMain(page);
   } else {
-    createMainPage();
+    await createMainPage();
   }
 }
 

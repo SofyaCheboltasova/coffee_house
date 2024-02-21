@@ -1,9 +1,4 @@
-/* eslint-disable lines-between-class-members */
 class ProductsTag {
-  productsTag;
-  productsWrapper;
-  loadedCards;
-  button;
   constructor() {
     this.productsTag = document.createElement("div");
     this.productsWrapper = document.createElement("div");
@@ -54,3 +49,4 @@ class ProductsTag {
 }
 
 export default ProductsTag;
+

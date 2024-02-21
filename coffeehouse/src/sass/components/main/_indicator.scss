@@ -1,0 +1,23 @@
+.indicator {
+  width: 4rem;
+  height: 0.4rem;
+  background: $color-border-light;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+}
+
+.indicator_active {
+  background: $color-border-dark;
+  animation: indicator 2000ms ease-in-out;
+  width: 100%;
+}
+
+@keyframes indicator {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
