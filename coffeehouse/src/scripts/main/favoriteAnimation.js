@@ -55,7 +55,7 @@ function changeSlide() {
 function setTimer() {
   const timer = setInterval(() => {
     changeSlide();
-  }, 3000);
+  }, 4000);
   localStorage.setItem("timer", timer);
 }
 
@@ -126,4 +126,3 @@ async function createFavorite() {
 }
 
 export default createFavorite;
-
