@@ -15,13 +15,13 @@
 
   padding: 100px;
 
-  @media screen and(min-width: $width-mobile) and (max-width: $width-desktop) {
+  @media screen and (max-width: $width-desktop) {
     width: $max-wrapper-width;
     flex-direction: column;
     padding: 100px 60px;
   }
 
-  @media screen and(min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     padding: 60px 16px;
   }
 }
@@ -31,7 +31,7 @@
   @include flex($direction: column, $gap: 40px);
   width: 53rem;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     width: 100%;
   }
 }
@@ -51,4 +51,3 @@
   font: $font-link-button;
   cursor: pointer;
 }
-

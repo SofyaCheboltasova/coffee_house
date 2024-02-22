@@ -2,7 +2,7 @@
   @include flex($direction: column, $align-items: center, $text-align: center);
   gap: 40px;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     text-align: left;
   }
 }
@@ -27,7 +27,7 @@
   object-fit: cover;
   border-radius: 20px;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     width: 100%;
   }
 
@@ -39,4 +39,3 @@
     }
   }
 }
-

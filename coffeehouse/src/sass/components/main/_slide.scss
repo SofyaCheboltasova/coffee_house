@@ -21,8 +21,25 @@
 
 .slide__description_text {
   max-width: 48rem;
+  scale: 1;
+  transition: scale 1s ease;
+
   @media screen and (max-width: $width-tablet) {
     width: 90vw;
   }
 }
 
+.slide__content {
+  transition: all 0.5s ease-in-out;
+
+  @media screen and (min-width: $width-tablet) {
+    &:hover {
+      scale: 1.02;
+      cursor: pointer;
+
+      .slide__description_text {
+        scale: 0.98;
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   @include flex($align-items: center, $justify-content: space-between);
   width: 100%;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     justify-content: center;
 
     .button__circle_dark,
@@ -47,4 +47,3 @@
 .slider__button_left {
   justify-content: flex-start;
 }
-

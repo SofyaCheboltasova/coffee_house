@@ -29,7 +29,7 @@ function sliderAnimation() {
   }
 
   slider.slides.forEach((slide) => {
-    slide.classList.remove(`hidden__carousel_${slider.clickedSide}`);
+    slide.classList.remove(`hidden__carousel_left`, "hidden__carousel_right");
     slide.removeEventListener("animationend", sliderAnimation);
   });
 }
@@ -46,6 +46,7 @@ function changeSlide() {
   changeIndicator();
 
   slider.slides.forEach((slide) => {
+    slide.classList.remove(`hidden__carousel_left`, "hidden__carousel_right");
     slide.classList.add(`hidden__carousel_${slider.clickedSide}`);
   });
 
@@ -109,8 +110,8 @@ function setMouseHoverHandlers() {
 }
 
 function setHandlers() {
-  setButtonHandler(slider.left, "left");
-  setButtonHandler(slider.right, "right");
+  setButtonHandler(slider.left, "right");
+  setButtonHandler(slider.right, "left");
 
   setTouchHandlers();
   setMouseHoverHandlers();

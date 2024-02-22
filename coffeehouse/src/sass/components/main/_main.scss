@@ -1,7 +1,7 @@
 .main {
   position: relative;
   height: 64.4rem;
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     height: 55.2rem;
   }
 }
@@ -18,7 +18,7 @@
   left: 0;
   z-index: -1;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     height: 55.2rem;
   }
 }
@@ -29,9 +29,8 @@
   padding: 100px 0 100px 100px;
   width: 630px;
 
-  @media screen and (min-width: $width-mobile) and (max-width: $width-tablet) {
+  @media screen and (max-width: $width-tablet) {
     padding: 60px 16px;
     width: unset;
   }
 }
-
